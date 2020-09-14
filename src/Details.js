@@ -14,7 +14,7 @@ const Details = (dataset) => {
         <Menu>
           
           {Object.entries(dataset).map(([key, value], i) => (
-            <MenuItem key={key} dataTest="dhis2-uicore-menuitem" label={key + " : " + value} />
+            <MenuItem key={key} dataTest={`details-${key}`} label={key + " : " + value} />
           ))}
         </Menu>
       </nav>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import i18n from "@dhis2/d2-i18n";
 import { Menu, MenuItem, MenuSectionHeader } from "@dhis2/ui";
 import styles from "./App.module.css";
@@ -21,7 +21,7 @@ const ProgramsList = () => {
   console.log(data);
   return (
     <div className={styles.container}>
-      <nav className={styles.menu} data-test-id="menu">
+      <nav className={styles.menu} data-test-id="list-program">
         <MenuSectionHeader label={i18n.t("List")} />
         <Menu>
           {loading && <span>...</span>}
@@ -31,7 +31,7 @@ const ProgramsList = () => {
               <MenuItem
                 key={program.id}
                 label={program.name}
-                dataTest="menu-programs"
+                dataTest={`list-dataSet-${program.id}`}
                 onClick={() => setActiveDetails(program)}
               />
             ))}

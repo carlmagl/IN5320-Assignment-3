@@ -20,7 +20,7 @@ const DataSetList = () => {
   const [activeDetaile, setActiveDetails] = useState();
   return (
     <div className={styles.container}>
-      <nav className={styles.menu} data-test-id="menu">
+      <nav className={styles.menu} data-test-id="list-program">
         <MenuSectionHeader label={i18n.t("List")} />
         <Menu>
           {loading && <span>...</span>}
@@ -30,7 +30,7 @@ const DataSetList = () => {
               <MenuItem
                 key={dataSet.id}
                 label={dataSet.name}
-                dataTest="menu-dataSets"
+                dataTest={`list-dataSet-${dataSet.id}`}
                 onClick={() => setActiveDetails(dataSet)}
               />
             ))}
