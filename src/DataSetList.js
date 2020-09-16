@@ -9,8 +9,8 @@ const dataSets = {
   dataSets: {
     resource: "dataSets",
     params: {
-      paging: false,
       fields: ["id", "name", "created"],
+      paging: false,
     },
   },
 };
@@ -28,6 +28,7 @@ const DataSetList = () => {
           {data &&
             data.dataSets.dataSets.map((dataSet) => (
               <MenuItem
+                active={activeDetaile && dataSet.id === activeDetaile.id}
                 key={dataSet.id}
                 label={dataSet.name}
                 dataTest={`list-dataSet-${dataSet.id}`}

@@ -29,6 +29,7 @@ const ProgramsList = () => {
           {data &&
             data.programs.programs.map((program) => (
               <MenuItem
+                active={activeDetaile && program.id === activeDetaile.id}
                 key={program.id}
                 label={program.name}
                 dataTest={`list-dataSet-${program.id}`}
