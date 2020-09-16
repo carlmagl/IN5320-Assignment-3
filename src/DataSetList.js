@@ -9,18 +9,18 @@ const dataSets = {
   dataSets: {
     resource: "dataSets",
     params: {
-      fields: ["id", "name", "created"],
       paging: false,
+      fields: ["id", "name", "created"],
     },
   },
 };
 
-const DataSetList = () => {
+export default function DataSetList() {
   const { error, loading, data } = useDataQuery(dataSets);
   const [activeDetaile, setActiveDetails] = useState();
   return (
     <div className={styles.container}>
-      <nav className={styles.menu} data-test-id="list-program">
+      <nav className={styles.menu}>
         <MenuSectionHeader label={i18n.t("List")} />
         <Menu>
           {loading && <span>...</span>}
@@ -45,5 +45,3 @@ const DataSetList = () => {
     </div>
   );
 };
-
-export default DataSetList;

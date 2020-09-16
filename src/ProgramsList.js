@@ -9,19 +9,19 @@ const programs = {
   programs: {
     resource: "programs",
     params: {
-      fields: ["id", "name", "created"],
       paging: false,
+      fields: ["id", "name", "created"],
     },
   },
 };
 
-const ProgramsList = () => {
+export default function ProgramsList(){
   const { error, loading, data } = useDataQuery(programs);
   const [activeDetaile, setActiveDetails] = useState();
   console.log(data);
   return (
     <div className={styles.container}>
-      <nav className={styles.menu} data-test-id="list-program">
+      <nav className={styles.menu}>
         <MenuSectionHeader label={i18n.t("List")} />
         <Menu>
           {loading && <span>...</span>}
@@ -32,7 +32,7 @@ const ProgramsList = () => {
                 active={activeDetaile && program.id === activeDetaile.id}
                 key={program.id}
                 label={program.name}
-                dataTest={`list-dataSet-${program.id}`}
+                dataTest={`list-program-${program.id}`}
                 onClick={() => setActiveDetails(program)}
               />
             ))}
@@ -44,5 +44,3 @@ const ProgramsList = () => {
     </div>
   );
 };
-
-export default ProgramsList;

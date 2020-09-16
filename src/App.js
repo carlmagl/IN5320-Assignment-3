@@ -5,7 +5,7 @@ import styles from "./App.module.css";
 import DataSetList from "./DataSetList";
 import ProgramsList from "./ProgramsList";
 
-const MyApp = () => {
+export default function MyApp(){
   const [programsActive, setPrograms] = useState(false);
   const [dataSetsActive, setDataset] = useState(false);
   //TODO: Add active styles for pressed buttons.
@@ -42,4 +42,3 @@ const MyApp = () => {
   );
 };
 
-export default MyApp;
